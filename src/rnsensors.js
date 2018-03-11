@@ -1,9 +1,10 @@
 import { NativeModules, DeviceEventEmitter } from "react-native";
-const { Gyroscope: GyroNative, Accelerometer: AccNative } = NativeModules;
+const { Gyroscope: GyroNative, Accelerometer: AccNative, Magnetometer: MagNative } = NativeModules;
 
 const handle = {
 	Accelerometer: AccNative,
-	Gyroscope: GyroNative
+	Gyroscope: GyroNative,
+	Magnetometer: MagNative
 };
 
 const RNSensors = {
