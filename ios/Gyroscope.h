@@ -7,7 +7,7 @@
     CMMotionManager *_motionManager;
 }
 
-- (void) isAvailableWithResolver:(RCTPromiseResolveBlock) resolve
+- (void) isAvailableResolver:(RCTPromiseResolveBlock) resolve
          rejecter:(RCTPromiseRejectBlock) reject;
 - (void) setUpdateInterval:(double) interval;
 - (void) getUpdateInterval:(RCTResponseSenderBlock) cb;

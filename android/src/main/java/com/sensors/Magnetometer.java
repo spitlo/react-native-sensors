@@ -76,20 +76,20 @@ public class Magnetometer extends ReactContextBaseJavaModule implements SensorEv
     }
   }
 
-    @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
-      double tempMs = (double) System.currentTimeMillis();
-      if (tempMs - lastReading >= interval){
-        lastReading = tempMs;
+  @Override
+  public void onSensorChanged(SensorEvent sensorEvent) {
+    double tempMs = (double) System.currentTimeMillis();
+    if (tempMs - lastReading >= interval){
+      lastReading = tempMs;
 
-        Sensor mySensor = sensorEvent.sensor;
-        WritableMap map = arguments.createMap();
+      Sensor mySensor = sensorEvent.sensor;
+      WritableMap map = arguments.createMap();
 
-        if (mySensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
-          map.putDouble("x", sensorEvent.values[0]);
-          map.putDouble("y", sensorEvent.values[1]);
-          map.putDouble("z", sensorEvent.values[2]);
-          map.putDouble("timestamp", tempMs);
+      if (mySensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
+        map.putDouble("x", sensorEvent.values[0]);
+        map.putDouble("y", sensorEvent.values[1]);
+        map.putDouble("z", sensorEvent.values[2]);
+        map.putDouble("timestamp", tempMs);
           sendEvent("Magnetometer", map);
         }
       }

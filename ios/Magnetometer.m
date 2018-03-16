@@ -26,14 +26,14 @@ RCT_REMAP_METHOD(isAvailable,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject) {
     return [self isAvailableWithResolver:resolve
-                                rejecter:reject];
+                               rejecter:reject];
 }
 
 - (void) isAvailableWithResolver:(RCTPromiseResolveBlock) resolve
                         rejecter:(RCTPromiseRejectBlock) reject {
     if([self->_motionManager isMagnetometerAvailable])
     {
-        /* Start the magnetometer if it is not active already */
+        /* Start the accelerometer if it is not active already */
         if([self->_motionManager isMagnetometerActive] == NO)
         {
             resolve(@YES);

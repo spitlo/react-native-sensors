@@ -43,7 +43,7 @@ public class Accelerometer extends ReactContextBaseJavaModule implements SensorE
     }
     promise.resolve(null);
   }
-  
+
   @ReactMethod
   public void setUpdateInterval(int newInterval) {
     this.interval = newInterval;
